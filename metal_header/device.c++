@@ -195,7 +195,7 @@ void Device::emit_struct_pointer_begin(std::string type, std::string name,
   os << "#else\n";
   os << "struct __metal_driver_" << type << " *" << name << ext;
   os << " __attribute__((weak))  = {\n";
-  os << "#endif\n"
+  os << "#endif\n";
 }
 void Device::emit_struct_pointer_element(std::string type, uint32_t id,
                                          std::string field,
