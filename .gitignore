@@ -17,3 +17,4 @@
 /freedom-bare_header-generator
 *.swo
 freedom-metal_specs-generator
+.vscode/*
