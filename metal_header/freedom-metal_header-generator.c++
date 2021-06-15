@@ -264,8 +264,16 @@ static void write_i_file(const fdt &dtb, fstream &os, std::string i_file,
   os << "#ifdef __IAR_SYSTEMS_ICC__\n";
   os << "#ifndef __inline__\n";
   os << "#define __inline__ inline\n";
+  os << "#ifdef __NO_IAR_WEAK__\n";
+  os << "#define __MD_EXTERNAL //\n";
+  os << "#else\n";
+  os << "#define __MD_EXTERNAL extern __weak\n";
+  os << "#endif\n";
+  os << "#else\n";
+  os << "#define __MD_EXTERNAL\n";
   os << "#endif\n";
   os << "#endif\n";
+  os << "#endif\n\n";
 
   std::list<Device *> devices;
 

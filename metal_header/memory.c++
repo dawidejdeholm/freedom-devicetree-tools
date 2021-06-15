@@ -112,7 +112,7 @@ void memory::create_handles() {
   os << "#else\n";
   os << "__MD_EXTERNAL\n";
   os << "struct metal_memory *__metal_memory_table[] = {\n";
-  os << "#endif";
+  os << "#endif\n";
 
   int i = 0;
   auto emit = [&](node n) {
