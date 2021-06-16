@@ -272,7 +272,6 @@ static void write_i_file(const fdt &dtb, fstream &os, std::string i_file,
   os << "#else\n";
   os << "#define __MD_EXTERNAL\n";
   os << "#endif\n";
-  os << "#endif\n";
   os << "#endif\n\n";
 
   std::list<Device *> devices;
